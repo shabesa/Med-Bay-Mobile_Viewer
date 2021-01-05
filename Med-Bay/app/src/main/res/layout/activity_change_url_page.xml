@@ -8,14 +8,14 @@
     tools:context=".ChangeUrlPage">
 
     <EditText
-        android:id="@+id/editTextNumberDecimal"
+        android:id="@+id/IP"
         android:layout_width="336dp"
         android:layout_height="63dp"
         android:background="@drawable/input_fields"
         android:ems="10"
         android:fontFamily="@font/rubik"
         android:hint=" 0.0.0.0"
-        android:inputType="numberDecimal"
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
@@ -31,21 +31,26 @@
         android:text="Enter I.P. Address"
         android:textColor="@color/black"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextNumberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/IP"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.926" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/SubmitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:background="@drawable/rounded_buttons"
+        android:fontFamily="@font/rubik"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal"
+        app:layout_constraintTop_toBottomOf="@+id/IP"
         app:layout_constraintVertical_bias="0.106" />
 </androidx.constraintlayout.widget.ConstraintLayout>

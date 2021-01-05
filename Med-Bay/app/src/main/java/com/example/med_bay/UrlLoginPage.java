@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class UrlLoginPage extends AppCompatActivity {
 
@@ -28,6 +29,8 @@ public class UrlLoginPage extends AppCompatActivity {
             public void onClick(View v) {
                 if (UsernameInput.getText().toString().equals("Admin") && PasswordInput.getText().toString().equals("Admin!23")){
                     startActivity(new Intent(UrlLoginPage.this, ChangeUrlPage.class));
+                }else{
+                    Toast.makeText(UrlLoginPage.this,"Invalid Password", Toast.LENGTH_LONG).show();
                 }
             }
         });
