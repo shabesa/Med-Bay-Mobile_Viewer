@@ -12,8 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".UrlLoginPage"
-            android:screenOrientation="portrait"></activity>
+        <activity android:name=".ChangeUrlPage"></activity>
+        <activity
+            android:name=".UrlLoginPage"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SettingsPage"
             android:screenOrientation="portrait" />
