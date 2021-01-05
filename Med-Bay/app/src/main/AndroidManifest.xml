@@ -12,8 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ChangeUrlPage"
-            android:screenOrientation="portrait"></activity>
+        <activity android:name=".ConfigureIP"></activity>
+        <activity android:name=".WebPage"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".ChangeUrlPage"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".UrlLoginPage"
             android:screenOrientation="portrait" />
@@ -22,7 +26,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="landscape">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

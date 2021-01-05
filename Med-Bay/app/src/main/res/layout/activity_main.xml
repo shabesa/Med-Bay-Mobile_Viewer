@@ -7,67 +7,15 @@
     android:background="#e00043"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/MoreButton"
-        android:layout_width="28dp"
-        android:layout_height="24dp"
-        android:background="@drawable/more"
-        app:layout_constraintBottom_toTopOf="@+id/AppWebView"
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <ProgressBar
-        android:id="@+id/AppProgressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#e00043"
-        app:layout_constraintBottom_toTopOf="@+id/AppWebView"
-        app:layout_constraintEnd_toStartOf="@+id/MoreButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/RefreshButton"
-        android:layout_width="28dp"
-        android:layout_height="24dp"
-        android:background="@drawable/refresh"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MoreButton"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/SettingsButtton"
-        android:layout_width="28dp"
-        android:layout_height="24dp"
-        android:background="@drawable/settings"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RefreshButton"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <WebView
-        android:id="@+id/AppWebView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
-
-    </WebView>
-
+        app:layout_constraintVertical_bias="0.442"
+        app:srcCompat="@drawable/med_bay" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#e00043"
-    tools:context=".ChangeUrlPage">
+    tools:context=".ConfigureIP">
 
     <EditText
         android:id="@+id/FirstIP"
@@ -16,6 +16,7 @@
         android:fontFamily="@font/rubik"
         android:hint=" 0.0.0.0"
         android:inputType="textPersonName"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
@@ -31,6 +32,7 @@
         android:text="Enter I.P. Address"
         android:textColor="@color/black"
         android:textSize="24sp"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/FirstIP"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,10 +49,26 @@
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="18sp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/FirstIP"
-        app:layout_constraintVertical_bias="0.106" />
+        app:layout_constraintVertical_bias="0.433" />
+
+    <TextView
+        android:id="@+id/StatMessage"
+        android:layout_width="167dp"
+        android:layout_height="39dp"
+        android:fontFamily="@font/rubik"
+        android:text="Setting IP"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

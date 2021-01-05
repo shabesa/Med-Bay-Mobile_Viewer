@@ -3,108 +3,38 @@ package com.example.med_bay;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Color;
+
 import android.os.Bundle;
-import android.view.View;
-import android.webkit.CookieManager;
-import android.webkit.WebChromeClient;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.Button;
-import android.widget.ProgressBar;
+import android.os.Handler;
+import android.view.WindowManager;
 
-import com.google.android.material.badge.BadgeUtils;
-
-import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button MoreButton;
-    ProgressBar AppBar;
-    WebView AppPage;
-    Button RefreshButton;
-    Button SettingsButton;
-
+    private static int SPLASH_SCREEN_TIME_OUT=2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        AppPage = (WebView) findViewById(R.id.AppWebView);
-        AppBar = (ProgressBar) findViewById(R.id.AppProgressBar);
-        MoreButton = (Button) findViewById(R.id.MoreButton);
-        RefreshButton = (Button) findViewById(R.id.RefreshButton);
-        SettingsButton = (Button) findViewById(R.id.SettingsButtton);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //This method is used so that your splash activity
+        //can cover the entire screen.
 
-        if (savedInstanceState != null) {
-            AppPage.restoreState(savedInstanceState);
-        } else {
-            AppPage.getSettings().setJavaScriptEnabled(true);
-            AppPage.getSettings().setUseWideViewPort(true);
-            AppPage.getSettings().setLoadWithOverviewMode(true);
-            AppPage.getSettings().setSupportZoom(true);
-            AppPage.getSettings().setBuiltInZoomControls(true);
-            AppPage.getSettings().setSupportMultipleWindows(true);
-            AppPage.getSettings().setDisplayZoomControls(false);
-            AppPage.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
-            AppPage.setBackgroundColor(Color.WHITE);
-            AppPage.loadUrl("http://192.168.0.24:8000/");
+        setContentView(R.layout.activity_main);
+        //this will bind your MainActivity.class file with activity_main.
 
-            AppPage.setWebChromeClient(new WebChromeClient() {
-                @Override
-                public void onProgressChanged(WebView view, int newProgress) {
-                    super.onProgressChanged(view, newProgress);
-                    AppBar.setProgress(newProgress);
-                    if (newProgress < 100 && AppBar.getVisibility() == ProgressBar.GONE) {
-                        AppBar.setVisibility(ProgressBar.VISIBLE);
-                    }
-                    if (newProgress == 100){
-                        AppBar.setVisibility(ProgressBar.GONE);
-                    }else{
-                        AppBar.setVisibility(ProgressBar.VISIBLE);
-                    }
-                }
-            });
-        }
-
-        AppPage.setWebViewClient(new MyWebViewClient());
-
-        MoreButton.setOnClickListener(new View.OnClickListener() {
+        new Handler().postDelayed(new Runnable() {
             @Override
-            public void onClick(View v) {
-                if (RefreshButton.getVisibility() == View.INVISIBLE && SettingsButton.getVisibility() == View.INVISIBLE){
-                    RefreshButton.setVisibility(View.VISIBLE);
-                    SettingsButton.setVisibility(View.VISIBLE);
-                }else{
-                    RefreshButton.setVisibility(View.INVISIBLE);
-                    SettingsButton.setVisibility(View.INVISIBLE);
-                }
+            public void run() {
+                startActivity(new Intent(MainActivity.this, ConfigureIP.class));
+                //invoke the SecondActivity.
+
+                finish();
+                //the current activity will get finished.
             }
-        });
-
-        RefreshButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AppPage.reload();
-            }
-        });
-
-        SettingsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, SettingsPage.class));
-            }
-        });
-
-    }
-    class MyWebViewClient extends WebViewClient {
-
-        @Override
-        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            view.loadUrl(url);
-            CookieManager.getInstance().setAcceptCookie(true);
-            return true;
-        }
+        }, SPLASH_SCREEN_TIME_OUT);
     }
 }
