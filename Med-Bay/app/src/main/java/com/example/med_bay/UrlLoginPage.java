@@ -28,13 +28,13 @@ public class UrlLoginPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (UsernameInput.getText().toString().equals("Admin") && PasswordInput.getText().toString().equals("Admin!23")){
-                    startActivity(new Intent(UrlLoginPage.this, ChangeUrlPage.class));
+                    startActivity(new Intent(UrlLoginPage.this, ChangeIPPage.class));
+                    finish();
                 }else{
                     Toast.makeText(UrlLoginPage.this,"Invalid Password", Toast.LENGTH_LONG).show();
                 }
             }
         });
-
 
     }
 }

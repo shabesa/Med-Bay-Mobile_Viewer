@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 public class ConfigureIP extends AppCompatActivity {
 
-    public static String IP = "";
     TextView Desc;
     EditText IPinput;
     Button Submit1;
@@ -32,7 +31,7 @@ public class ConfigureIP extends AppCompatActivity {
         Status = (TextView) findViewById(R.id.StatMessage);
 
 
-        sharedPreferences = this.getSharedPreferences("IP", MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("IP_address", MODE_PRIVATE);
 
 
         Submit1.setOnClickListener(new View.OnClickListener() {
@@ -41,8 +40,8 @@ public class ConfigureIP extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
 
                 String Data = "http://" + IPinput.getText().toString() + ":8000/";
-                IP = sharedPreferences.getString(IP, Data);
-                editor.apply();
+                editor.putString("IP", Data);
+                editor.commit();
                 Desc.setVisibility(View.INVISIBLE);
                 IPinput.setVisibility(View.INVISIBLE);
                 Submit1.setVisibility(View.INVISIBLE);
@@ -54,6 +53,7 @@ public class ConfigureIP extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 startActivity(new Intent(ConfigureIP.this, WebPage.class));
+                finish();
 
 
             }

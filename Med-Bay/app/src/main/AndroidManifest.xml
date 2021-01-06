@@ -12,14 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ChangeIPPage"></activity>
-        <activity android:name=".ConfigureIP" />
+        <activity
+            android:name=".ChangeIPPage"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".ConfigureIP"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".WebPage"
             android:screenOrientation="landscape" />
-        <activity
-            android:name=".ChangeUrlPage"
-            android:screenOrientation="portrait" />
         <activity
             android:name=".UrlLoginPage"
             android:screenOrientation="portrait" />

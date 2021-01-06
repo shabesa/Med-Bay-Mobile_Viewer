@@ -3,6 +3,7 @@ package com.example.med_bay;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +17,7 @@ import android.widget.ProgressBar;
 
 public class WebPage extends AppCompatActivity {
 
+    public static String IP = "";
     Button MoreButton;
     ProgressBar AppBar;
     WebView AppPage;
@@ -34,6 +36,9 @@ public class WebPage extends AppCompatActivity {
         RefreshButton = (Button) findViewById(R.id.RefreshButton);
         SettingsButton = (Button) findViewById(R.id.SettingsButtton);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("IP_address", MODE_PRIVATE);
+        IP = sharedPreferences.getString("IP","http://0.0.0.0:8000/");
+
         if (savedInstanceState != null) {
             AppPage.restoreState(savedInstanceState);
         } else {
@@ -46,7 +51,7 @@ public class WebPage extends AppCompatActivity {
             AppPage.getSettings().setDisplayZoomControls(false);
             AppPage.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
             AppPage.setBackgroundColor(Color.WHITE);
-            AppPage.loadUrl(ConfigureIP.IP);
+            AppPage.loadUrl(IP);
 
             AppPage.setWebChromeClient(new WebChromeClient() {
                 @Override
@@ -84,12 +89,16 @@ public class WebPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AppPage.reload();
+                RefreshButton.setVisibility(View.INVISIBLE);
+                SettingsButton.setVisibility(View.INVISIBLE);
             }
         });
 
         SettingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                RefreshButton.setVisibility(View.INVISIBLE);
+                SettingsButton.setVisibility(View.INVISIBLE);
                 startActivity(new Intent(WebPage.this, SettingsPage.class));
             }
         });
