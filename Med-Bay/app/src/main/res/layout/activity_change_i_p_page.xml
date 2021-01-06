@@ -41,6 +41,8 @@
         android:id="@+id/SubmitSec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginLeft="76dp"
         android:background="@drawable/rounded_buttons"
         android:fontFamily="@font/rubik"
         android:text="Submit"
@@ -48,11 +50,9 @@
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ChangeIP"
-        app:layout_constraintVertical_bias="0.363" />
+        app:layout_constraintVertical_bias="0.385" />
 
     <TextView
         android:id="@+id/DisplayCurrentIP"
@@ -90,4 +90,21 @@
         app:layout_constraintTop_toBottomOf="@+id/ChangeIP"
         app:layout_constraintVertical_bias="0.156"
         app:srcCompat="@drawable/warning" />
+
+    <Button
+        android:id="@+id/CancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_buttons"
+        android:fontFamily="@font/rubik"
+        android:text="Cancel"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toEndOf="@+id/SubmitSec"
+        app:layout_constraintTop_toBottomOf="@+id/ChangeIP"
+        app:layout_constraintVertical_bias="0.385" />
 </androidx.constraintlayout.widget.ConstraintLayout>

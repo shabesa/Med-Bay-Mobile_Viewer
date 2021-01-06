@@ -56,11 +56,41 @@
         app:layout_constraintTop_toBottomOf="@+id/RefreshButton"
         app:layout_constraintVertical_bias="0.0" />
 
+    <TextView
+        android:id="@+id/ErrorShow"
+        android:layout_width="445dp"
+        android:layout_height="47dp"
+        android:fontFamily="@font/rubik"
+        android:text="                  Page not Available"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/AppWebView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ErrorShow1"
+        android:layout_width="445dp"
+        android:layout_height="47dp"
+        android:fontFamily="@font/rubik"
+        android:text="     Check Your Server (or) IP Config"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ErrorShow"
+        app:layout_constraintVertical_bias="0.04000002" />
+
     <WebView
         android:id="@+id/AppWebView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="24dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

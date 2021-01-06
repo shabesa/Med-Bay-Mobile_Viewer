@@ -36,10 +36,6 @@ public class MainActivity extends AppCompatActivity {
                 setContentView(R.layout.activity_main);
                 //this will bind your MainActivity.class file with activity_main.
 
-                SharedPreferences.Editor edit = mPreferences.edit();
-                edit.putBoolean("firstTime", false);
-                edit.apply();
-
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -53,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
             }else{
                 startActivity(new Intent(MainActivity.this, WebPage.class));
                 finish();
+                System.exit(0);
             }
         }
     }

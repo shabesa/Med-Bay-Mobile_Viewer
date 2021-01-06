@@ -17,6 +17,7 @@ public class ChangeIPPage extends AppCompatActivity {
     String IP;
     EditText ChangeIP;
     Button Submit2;
+    Button Cancel;
     TextView CurrentIP;
     SharedPreferences sharedPreferences;
     String DataNew;
@@ -27,8 +28,10 @@ public class ChangeIPPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_i_p_page);
 
+
         ChangeIP = (EditText) findViewById(R.id.ChangeIP);
         Submit2 = (Button) findViewById(R.id.SubmitSec);
+        Cancel = (Button) findViewById(R.id.CancelButton);
         CurrentIP = (TextView) findViewById(R.id.DisplayCurrentIP);
         sharedPreferences = getSharedPreferences("IP_address", MODE_PRIVATE);
         IP = sharedPreferences.getString("IP", "http://0.0.0.0:8000");
@@ -57,5 +60,11 @@ public class ChangeIPPage extends AppCompatActivity {
             }
         });
 
+        Cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }

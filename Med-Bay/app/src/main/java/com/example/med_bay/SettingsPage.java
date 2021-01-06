@@ -3,6 +3,7 @@ package com.example.med_bay;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.audiofx.BassBoost;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,8 +26,19 @@ public class SettingsPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SettingsPage.this, UrlLoginPage.class));
-                finish();
             }
         });
+
+        About.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SettingsPage.this, AboutPage.class));
+            }
+        });
+    }
+
+    @Override
+    public void onBackPressed(){
+        finish();
     }
 }

@@ -10,10 +10,13 @@ import android.util.Log;
 import android.view.View;
 import android.webkit.CookieManager;
 import android.webkit.WebChromeClient;
+import android.webkit.WebResourceError;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class WebPage extends AppCompatActivity {
@@ -26,6 +29,9 @@ public class WebPage extends AppCompatActivity {
     Button RefreshButton;
     Button SettingsButton;
 
+    TextView Error1;
+    TextView Error2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +43,14 @@ public class WebPage extends AppCompatActivity {
         MoreButton = (Button) findViewById(R.id.MoreButton);
         RefreshButton = (Button) findViewById(R.id.RefreshButton);
         SettingsButton = (Button) findViewById(R.id.SettingsButtton);
+
+        AppPage.setVisibility(View.VISIBLE);
+
+        Error1 = (TextView) findViewById(R.id.ErrorShow);
+        Error2 = (TextView) findViewById(R.id.ErrorShow1);
+
+        Error1.setVisibility(View.INVISIBLE);
+        Error2.setVisibility(View.INVISIBLE);
 
         SharedPreferences sharedPreferences = getSharedPreferences("IP_address", MODE_PRIVATE);
         IP = sharedPreferences.getString("IP","http://0.0.0.0:8000/");
@@ -91,8 +105,11 @@ public class WebPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AppPage.reload();
+                AppPage.setVisibility(View.VISIBLE);
                 RefreshButton.setVisibility(View.INVISIBLE);
                 SettingsButton.setVisibility(View.INVISIBLE);
+                Error1.setVisibility(View.INVISIBLE);
+                Error2.setVisibility(View.INVISIBLE);
             }
         });
 
@@ -114,6 +131,17 @@ public class WebPage extends AppCompatActivity {
             CookieManager.getInstance().setAcceptCookie(true);
             return true;
         }
+
+        @Override
+        public void onReceivedError(WebView view, WebResourceRequest request,
+                                              WebResourceError error) {
+            super.onReceivedError(view, request, error);
+            // Do something
+            Log.e("onReceivedError: ", "Unable to load page");
+            AppPage.setVisibility(View.INVISIBLE);
+            Error1.setVisibility(View.VISIBLE);
+            Error2.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
@@ -123,7 +151,9 @@ public class WebPage extends AppCompatActivity {
             Toast.makeText(WebPage.this, "Press back again to quit", Toast.LENGTH_SHORT).show();
         }else if (Back == 2){
             super.onBackPressed();
-            return;
+            finishAffinity();
+            System.exit(0);
+
         }
     }
 
