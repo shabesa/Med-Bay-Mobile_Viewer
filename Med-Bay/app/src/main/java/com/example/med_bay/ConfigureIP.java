@@ -2,6 +2,7 @@ package com.example.med_bay;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -37,17 +38,19 @@ public class ConfigureIP extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
 
                 editor.putString(IP, IPinput.getText().toString());
+                editor.apply();
                 Desc.setVisibility(View.INVISIBLE);
                 IPinput.setVisibility(View.INVISIBLE);
                 Submit1.setVisibility(View.INVISIBLE);
                 Status.setVisibility(View.VISIBLE);
-                editor.apply();
+                Status.setText("IP has been set");
                 try {
-                    Thread.sleep(5000);
+                    Thread.sleep(2000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                Status.setText("IP has been set successfully");
+                startActivity(new Intent(ConfigureIP.this, WebPage.class));
+
 
             }
         });

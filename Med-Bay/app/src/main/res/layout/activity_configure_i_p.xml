@@ -59,8 +59,8 @@
 
     <TextView
         android:id="@+id/StatMessage"
-        android:layout_width="167dp"
-        android:layout_height="39dp"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
         android:fontFamily="@font/rubik"
         android:text="Setting IP"
         android:textColor="@color/black"
