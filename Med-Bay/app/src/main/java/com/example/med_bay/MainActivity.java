@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 }, SPLASH_SCREEN_TIME_OUT);
             }else{
                 startActivity(new Intent(MainActivity.this, WebPage.class));
+                finish();
             }
         }
     }

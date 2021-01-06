@@ -14,10 +14,12 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 public class WebPage extends AppCompatActivity {
 
     public static String IP = "";
+    int Back = 0;
     Button MoreButton;
     ProgressBar AppBar;
     WebView AppPage;
@@ -113,4 +115,16 @@ public class WebPage extends AppCompatActivity {
             return true;
         }
     }
+
+    @Override
+    public void onBackPressed(){
+        Back++;
+        if (Back == 1){
+            Toast.makeText(WebPage.this, "Press back again to quit", Toast.LENGTH_SHORT).show();
+        }else if (Back == 2){
+            super.onBackPressed();
+            return;
+        }
+    }
+
 }

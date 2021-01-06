@@ -25,6 +25,7 @@ public class SettingsPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SettingsPage.this, UrlLoginPage.class));
+                finish();
             }
         });
     }

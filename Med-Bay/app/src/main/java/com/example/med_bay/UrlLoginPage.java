@@ -31,7 +31,7 @@ public class UrlLoginPage extends AppCompatActivity {
                     startActivity(new Intent(UrlLoginPage.this, ChangeIPPage.class));
                     finish();
                 }else{
-                    Toast.makeText(UrlLoginPage.this,"Invalid Password", Toast.LENGTH_LONG).show();
+                    Toast.makeText(UrlLoginPage.this,"Invalid User id or Password", Toast.LENGTH_LONG).show();
                 }
             }
         });
