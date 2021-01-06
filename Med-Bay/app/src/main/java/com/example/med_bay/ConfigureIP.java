@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,15 +30,18 @@ public class ConfigureIP extends AppCompatActivity {
         IPinput = (EditText) findViewById(R.id.FirstIP);
         Submit1 = (Button) findViewById(R.id.SubmitButtonMain);
         Status = (TextView) findViewById(R.id.StatMessage);
+        
 
-        sharedPreferences = getSharedPreferences(IP, MODE_PRIVATE);
+        sharedPreferences = this.getSharedPreferences("IP", MODE_PRIVATE);
+
 
         Submit1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
 
-                editor.putString(IP, IPinput.getText().toString());
+                String Data = "http://" + IPinput.getText().toString() + ":8000/";
+                IP = sharedPreferences.getString(IP, Data);
                 editor.apply();
                 Desc.setVisibility(View.INVISIBLE);
                 IPinput.setVisibility(View.INVISIBLE);

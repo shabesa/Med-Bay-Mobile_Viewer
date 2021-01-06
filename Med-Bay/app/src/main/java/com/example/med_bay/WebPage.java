@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.CookieManager;
 import android.webkit.WebChromeClient;
@@ -20,6 +21,7 @@ public class WebPage extends AppCompatActivity {
     WebView AppPage;
     Button RefreshButton;
     Button SettingsButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +46,7 @@ public class WebPage extends AppCompatActivity {
             AppPage.getSettings().setDisplayZoomControls(false);
             AppPage.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
             AppPage.setBackgroundColor(Color.WHITE);
-            AppPage.loadUrl("http://192.168.0.24:8000/");
+            AppPage.loadUrl(ConfigureIP.IP);
 
             AppPage.setWebChromeClient(new WebChromeClient() {
                 @Override
