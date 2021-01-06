@@ -30,7 +30,7 @@ public class ConfigureIP extends AppCompatActivity {
         IPinput = (EditText) findViewById(R.id.FirstIP);
         Submit1 = (Button) findViewById(R.id.SubmitButtonMain);
         Status = (TextView) findViewById(R.id.StatMessage);
-        
+
 
         sharedPreferences = this.getSharedPreferences("IP", MODE_PRIVATE);
 
