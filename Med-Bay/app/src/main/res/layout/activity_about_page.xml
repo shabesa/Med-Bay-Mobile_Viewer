@@ -7,6 +7,18 @@
     android:background="#e00043"
     tools:context=".AboutPage">
 
+    <ImageView
+        android:id="@+id/BoxImageView"
+        android:layout_width="367dp"
+        android:layout_height="391dp"
+        android:contentDescription="@string/image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AboutTextView"
+        app:layout_constraintVertical_bias="0.103"
+        app:srcCompat="@drawable/input_fields" />
+
     <TextView
         android:id="@+id/AboutTextView"
         android:layout_width="95dp"
@@ -19,35 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.196" />
-
-    <ImageView
-        android:id="@+id/BoxImageView"
-        android:layout_width="364dp"
-        android:layout_height="488dp"
-        android:contentDescription="@string/image"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AboutTextView"
-        app:layout_constraintVertical_bias="0.352"
-        app:srcCompat="@drawable/input_fields" />
-
-    <TextView
-        android:id="@+id/BackEndTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/rubik_medium"
-        android:text="@string/Backend"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AboutTextView"
-        app:layout_constraintVertical_bias="0.115" />
+        app:layout_constraintVertical_bias="0.147" />
 
     <TextView
         android:id="@+id/MarudhuTextView"
@@ -59,9 +43,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BackEndTextView"
-        app:layout_constraintVertical_bias="0.064" />
+        app:layout_constraintVertical_bias="0.033" />
 
     <TextView
         android:id="@+id/Shabesa1TeaxtView"
@@ -91,7 +76,7 @@
         app:layout_constraintHorizontal_bias="0.176"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Shabesa1TeaxtView"
-        app:layout_constraintVertical_bias="0.133" />
+        app:layout_constraintVertical_bias="0.05" />
 
     <TextView
         android:id="@+id/RishiTextView"
@@ -105,7 +90,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/UiTextView"
-        app:layout_constraintVertical_bias="0.103" />
+        app:layout_constraintVertical_bias="0.068" />
 
     <TextView
         android:id="@+id/textView10"
@@ -120,7 +105,7 @@
         app:layout_constraintHorizontal_bias="0.212"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RishiTextView"
-        app:layout_constraintVertical_bias="0.299" />
+        app:layout_constraintVertical_bias="0.109" />
 
     <TextView
         android:id="@+id/Shabesa2TextView"
@@ -134,7 +119,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintVertical_bias="0.213" />
+        app:layout_constraintVertical_bias="0.102" />
+
+    <TextView
+        android:id="@+id/BackEndTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubik_medium"
+        android:text="@string/Backend"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AboutTextView"
+        app:layout_constraintVertical_bias="0.109" />
 
     <ImageView
         android:id="@+id/Medbayico"
@@ -145,5 +145,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/medbay_icon" />
+
+    <ImageView
+        android:id="@+id/TeamBox"
+        android:layout_width="248dp"
+        android:layout_height="98dp"
+        android:contentDescription="@string/image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.974"
+        app:srcCompat="@drawable/team_logo_bg" />
+
+    <ImageView
+        android:id="@+id/TeamIco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BoxImageView"
+        app:layout_constraintVertical_bias="0.756"
+        app:srcCompat="@drawable/teamdebug_transparent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
