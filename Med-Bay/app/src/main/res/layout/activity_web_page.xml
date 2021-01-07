@@ -58,10 +58,10 @@
 
     <TextView
         android:id="@+id/ErrorShow"
-        android:layout_width="445dp"
+        android:layout_width="225dp"
         android:layout_height="47dp"
         android:fontFamily="@font/rubik"
-        android:text="                  Page not Available"
+        android:text="@string/Page_not_Available"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:visibility="invisible"
@@ -75,7 +75,7 @@
         android:layout_width="445dp"
         android:layout_height="47dp"
         android:fontFamily="@font/rubik"
-        android:text="     Check Your Server (or) IP Config"
+        android:text="@string/Check_message"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:visibility="invisible"
