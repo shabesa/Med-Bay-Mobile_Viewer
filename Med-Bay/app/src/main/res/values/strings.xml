@@ -20,4 +20,5 @@
     <string name="UI">UI Design:</string>
     <string name="App">Mobile Viewer:</string>
     <string name="image">image</string>
+    <string name="logo_desc">Product of:</string>
 </resources>

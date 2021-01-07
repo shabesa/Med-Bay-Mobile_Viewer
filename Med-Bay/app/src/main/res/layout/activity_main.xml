@@ -9,13 +9,40 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
+        android:id="@+id/MedBayLogoMain"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:alpha="0"
+        android:contentDescription="@string/image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.497"
+        app:srcCompat="@drawable/med_bay" />
+
+    <ImageView
+        android:id="@+id/Box"
+        android:layout_width="244dp"
+        android:layout_height="120dp"
+        android:alpha="0"
+        android:contentDescription="@string/image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.442"
-        app:srcCompat="@drawable/med_bay" />
+        app:srcCompat="@drawable/team_logo_bg" />
+
+    <ImageView
+        android:id="@+id/TeamLogoImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        android:contentDescription="@string/image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/teamdebug_transparent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

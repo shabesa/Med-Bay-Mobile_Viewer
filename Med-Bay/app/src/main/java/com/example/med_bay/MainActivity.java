@@ -5,21 +5,34 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 
 import android.content.SharedPreferences;
+import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    private static int SPLASH_SCREEN_TIME_OUT=2000;
     private Boolean firstTime = null;
 
+    ImageView MBLogo;
+    ImageView Box;
+    ImageView TeamLogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+
+        MBLogo = (ImageView) findViewById(R.id.MedBayLogoMain);
+        Box = (ImageView) findViewById(R.id.Box);
+        TeamLogo = (ImageView) findViewById(R.id.TeamLogoImage);
 
         if (firstTime == null){
 
@@ -27,14 +40,31 @@ public class MainActivity extends AppCompatActivity {
             firstTime = mPreferences.getBoolean("firstTime", true);
 
             if (firstTime) {
+                MBLogo.animate().alpha(1).setDuration(2000);
 
-                getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                        WindowManager.LayoutParams.FLAG_FULLSCREEN);
-                //This method is used so that your splash activity
-                //can cover the entire screen.
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        MBLogo.animate().alpha(0).setDuration(2000);
 
-                setContentView(R.layout.activity_main);
-                //this will bind your MainActivity.class file with activity_main.
+                    }
+                }, 2500);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Box.animate().alpha(1).setDuration(2000);
+                        TeamLogo.animate().alpha(1).setDuration(2000);
+                    }
+                }, 5000);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Box.animate().alpha(0).setDuration(2000);
+                        TeamLogo.animate().alpha(0).setDuration(2000);
+                    }
+                }, 7000);
 
                 new Handler().postDelayed(new Runnable() {
                     @Override
@@ -45,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                         finish();
                         //the current activity will get finished.
                     }
-                }, SPLASH_SCREEN_TIME_OUT);
+                }, 9000);
             }else{
                 startActivity(new Intent(MainActivity.this, WebPage.class));
                 finish();
