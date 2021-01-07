@@ -13,4 +13,11 @@
     <string name="Login">Login</string>
     <string name="Page_not_Available">Page not Available</string>
     <string name="Check_message">Check Your Server Status(or) IP Config</string>
+    <string name="Backend">Backend:</string>
+    <string name="name1">MarudhuPaandian. K</string>
+    <string name="name2">K.A.Shabesa</string>
+    <string name="name3">Rishi Menon</string>
+    <string name="UI">UI Design:</string>
+    <string name="App">Mobile Viewer:</string>
+    <string name="image">image</string>
 </resources>
