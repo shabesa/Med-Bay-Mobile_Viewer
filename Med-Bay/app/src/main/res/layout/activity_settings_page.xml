@@ -18,6 +18,7 @@
         android:background="@drawable/rounded_buttons"
         android:fontFamily="@font/rubik"
         android:text="@string/Change_IP"
+        android:textAllCaps="false"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
