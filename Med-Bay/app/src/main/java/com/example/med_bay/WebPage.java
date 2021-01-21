@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.webkit.CookieManager;
@@ -149,6 +150,12 @@ public class WebPage extends AppCompatActivity {
         Back++;
         if (Back == 1){
             Toast.makeText(WebPage.this, "Press back again to quit", Toast.LENGTH_SHORT).show();
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Back = 0;
+                }
+            }, 1500);
         }else if (Back == 2){
             super.onBackPressed();
             finishAffinity();
